@@ -19,13 +19,25 @@ C++ offers `class` keyword, which is virtually identical to `struct`, with the k
 ```cxx
 class MyClass{
 public:
-    MyClass();
     int compute(int);
+    float x, y, z;
 private:
     int a, b, c;
-    float x, y, z;
     double alpha, beta, gamma, delta;
 }
+```
+
+Equivalent Fortran class
+
+```fortran
+type MyClass
+    private ! make class visibility private by default
+    real(4), public :: x, y, z
+    integer :: a, b, c
+    real(8) :: alpha, beta, gamma, delta
+contains
+    procedure, public :: compute
+end type
 ```
 
 Prefer `class` over `struct` for classes intended to have private members. Use `struct` sparingly for smaller concrete data types (e.g. a Position struct that holds `x`, `y`, and `z`).
