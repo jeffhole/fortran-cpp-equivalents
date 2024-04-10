@@ -1,4 +1,4 @@
-Classes in Fortran and C++
+# Classes in Fortran and C++
 
 ## Fortran intent(in) type-bound procedures
 In Fortran, to define a type-bound procedure that does not modify the class (like a getter method):
@@ -27,7 +27,7 @@ public:
 
 The `const` indicator means that this class method does not modify the class instance.
 
-## Fortran abstract type
+## Abstract Types (Classes)
 
 Abstract types in Fortran are defined by:
 
