@@ -55,8 +55,11 @@ public:
 ```
 
 The combination of the `virtual` keyword and the curious `=0` syntax means that extensions of `BaseClass` MUST implement it.
+The `virtual` keyword marks a method that can be overriden, but it can be implemented in the class that declares it. This
+is a "non-pure virtual" method. Methods not marked as `virtual` cannot be overriden in class extensions.
 
-If the `=0` is not used, it appears that the issue will only be caught at the linking stage:
+If the `=0` is not used, it appears that the issue will only be caught at the linking stage. This is because the method is assumed
+to be defined by the base class. By using `=0`, this says that this method is NOT DEFINED by the base class.
 
 ```cxx
 class BaseClass{
